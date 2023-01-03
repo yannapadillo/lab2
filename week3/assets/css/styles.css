@@ -6,7 +6,7 @@
   --font-semi: 600;
 }
 
-/*===== Colores =====*/
+/*===== Color =====*/
 :root {
   --first-color: #4070f4;
   --second-color: #0e2431;
@@ -28,7 +28,7 @@
   }
 }
 
-/*===== Margenes =====*/
+/*===== Margin =====*/
 :root {
   --mb-1: 0.5rem;
   --mb-2: 1rem;
@@ -91,8 +91,8 @@ ul {
 a {
   text-decoration: none;
 }
-video {
-  max-width: 200%;
+img {
+  max-width: 100%;
   height: auto;
   display: block;
 }
@@ -124,7 +124,7 @@ video {
   padding-bottom: 2rem;
 }
 
-/*===== LAYOUT =====*/
+/*===== FRAMEWORK =====*/
 .bd-grid {
   max-width: 1024px;
   display: grid;
