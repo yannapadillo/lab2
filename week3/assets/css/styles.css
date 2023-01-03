@@ -13,7 +13,7 @@
   --third-color: #ffffff;
 }
 
-/*===== Fuente y tipografia =====*/
+/*===== typography =====*/
 :root {
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
@@ -587,7 +587,7 @@ img.man-icons {
     width: 50%;
   } */
   .skills-container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     text-align: initial;
   }
   .about-img img {
