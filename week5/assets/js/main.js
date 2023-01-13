@@ -16,10 +16,12 @@ const showMenu = (toggleId, navId) => {
 showMenu("nav-toggle", "nav-menu");
 
 /*===== ACTIVE AND REMOVE MENU =====*/
+//Lesson 2.3 - Const
 const navLinks = document.querySelectorAll(".nav-link");
 const sections = document.querySelectorAll(".section");
 
 window.addEventListener("scroll", () => {
+  //Lesson 2.2 - Let
   let current = '';
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
