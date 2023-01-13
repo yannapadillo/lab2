@@ -1,5 +1,6 @@
 /*===== MENU SHOW =====*/
 //Lesson 1.3 - Where to
+//Lesson 2.3 - Const
 const showMenu = (toggleId, navId) => {
   const toggle = document.getElementById(toggleId),
     nav = document.getElementById(navId);
