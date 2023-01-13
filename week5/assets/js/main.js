@@ -96,7 +96,7 @@ sr.reveal(".project-img", { interval: 200 });
     element.classList.toggle("dark-mode")
   }
 
-
+  //Lesson 2.1 - Variables
   var messageArr = ["COMSCI Student", "Frontend Developer", "Backend Developer"];
   var textPosition = 0;
   var speed = 200;
