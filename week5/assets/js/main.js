@@ -98,5 +98,19 @@ sr.reveal(".project-img", { interval: 200 });
     element.classList.toggle("dark-mode")
   }
 
+  var messageArr = ["COMSCI Student", "Frontend Developer", "Backend Developer"];
+  var textPosition = 0;
+  var speed = 200;
+
+  typewriter = () => {
+    // for(let i = 0; i < messageArr.length; i++) {
+    document.querySelector("#jobTitle").innerHTML = messageArr[0].substring(0, textPosition)  ;
+    if(textPosition ++  != messageArr[0].length)
+        setTimeout(typewriter, speed)
+  }
+
+  //Lesson 22.10 - DOM Event Listener
+  window.addEventListener("load" , typewriter);
+
 
 
