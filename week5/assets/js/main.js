@@ -50,15 +50,7 @@ const navMenu = document.getElementById("nav-menu");
 // }
 navLinks.forEach((n) => n.addEventListener("click", () => { navMenu.classList.remove("show") }));
 
-/*===== COPY Email =====*/
-const copy = document.getElementById("copy");
-copy.addEventListener("click", () => {
-  navigator.clipboard.writeText("kasulaarunteja@gmail.com");
-  copy.innerHTML = "copied";
-  setTimeout(() => {
-    copy.innerHTML = null;
-  }, 1000);
-});
+
 
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
@@ -91,23 +83,4 @@ sr.reveal(".project-img", { interval: 200 });
 /*SCROLL CONTACT*/
   // sr.reveal(".contact-input", { interval: 200 });
 
-  function myFunction(){
-    var element = document.body;
-    element.classList.toggle("dark-mode")
-  }
-
-  //Lesson 2.1 - Variables
-  var messageArr = ["COMSCI Student", "Frontend Developer", "Backend Developer"];
-  var textPosition = 0;
-  var speed = 200;
-
-  typewriter = () => {
-    // for(let i = 0; i < messageArr.length; i++) {
-    document.querySelector("#jobTitle").innerHTML = messageArr[0].substring(0, textPosition)  ;
-    if(textPosition ++  != messageArr[0].length)
-        setTimeout(typewriter, speed)
-  }
-
-
-  window.addEventListener("load" , typewriter);
 
