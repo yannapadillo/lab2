@@ -50,7 +50,16 @@ const navMenu = document.getElementById("nav-menu");
 // }
 navLinks.forEach((n) => n.addEventListener("click", () => { navMenu.classList.remove("show") }));
 
-
+//Lesson 20
+/*===== COPY Email =====*/
+const copy = document.getElementById("copy");
+copy.addEventListener("click", () => {
+  navigator.clipboard.writeText("lzpadillo@student.apc.edu.ph");
+  copy.innerHTML = "copied";
+  setTimeout(() => {
+    copy.innerHTML = null;
+  }, 1000);
+});
 
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
