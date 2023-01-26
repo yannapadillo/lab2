@@ -92,4 +92,11 @@ sr.reveal(".project-img", { interval: 200 });
 /*SCROLL CONTACT*/
   // sr.reveal(".contact-input", { interval: 200 });
 
+//Lesson 18 - Functions
+  function myFunction(){
+    var element = document.body;
+    element.classList.toggle("dark-mode")
+  }
+
+
 
