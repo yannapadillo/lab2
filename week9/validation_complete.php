@@ -107,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
 
 	$servername = "localhost";
-	$username = "lzpadillo";
+	$username = "root";
 	$password = "";
 	$dbname = "webprogss211db";
 	
