@@ -107,9 +107,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
 
 	$servername = "localhost";
-	$username = "root";
+	$username = "lzpadillo";
 	$password = "";
-	$dbname = "testdb";
+	$dbname = "webprogss211db";
 	
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
