@@ -7,8 +7,6 @@
 </head>
 <body>  
 
-
-
 <?php
 // define variables and set to empty values
 $nameErr = $emailErr = $genderErr = $websiteErr = "";
@@ -39,10 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $website = "";
   } else {
     $website = test_input($_POST["website"]);
-    // check if URL address syntax is valid
+    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
     if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
       $websiteErr = "Invalid URL";
-    }    
+    }
   }
 
   if (empty($_POST["comment"])) {
@@ -65,24 +63,25 @@ function test_input($data) {
   return $data;
 }
 ?>
+
 <h2>PHP Form Validation Example</h2>
 <p><span class="error">* required field</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  Name: <input type="text" name="name">
+  Name: <input type="text" name="name" value="<?php echo $name;?>">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
-  E-mail: <input type="text" name="email">
+  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
   <span class="error">* <?php echo $emailErr;?></span>
   <br><br>
-  Website: <input type="text" name="website">
+  Website: <input type="text" name="website" value="<?php echo $website;?>">
   <span class="error"><?php echo $websiteErr;?></span>
   <br><br>
-  Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+  Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
   <br><br>
   Gender:
-  <input type="radio" name="gender" value="female">Female
-  <input type="radio" name="gender" value="male">Male
-  <input type="radio" name="gender" value="other">Other
+  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
+  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
+  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
   <span class="error">* <?php echo $genderErr;?></span>
   <br><br>
   <input type="submit" name="submit" value="Submit">  
@@ -101,38 +100,40 @@ echo "<br>";
 echo $gender;
 ?>
 
+
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
 
 	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "webprogss211
-	";
-
+	$username = "webprogss211";
+	$password = "webprogss211";
+	$dbname = "webprogss211";
+	
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
-	
 	// Check connection
 	if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 	}
-
-	$sql = "INSERT INTO MyGuests (firstname, lastname, email)
-	VALUES ('$name', ' ', '$email')";
-
+	
+	$sql = "INSERT INTO lzpadillo_myguests (Name, Email, Website, Comment, Gender)
+	VALUES ('$name', '$email', '$website','&comment', '$gender')";
+	
 	if ($conn->query($sql) === TRUE) {
 	echo "New record created successfully";
 	} else {
 	echo "Error: " . $sql . "<br>" . $conn->error;
 	}
-
-	$conn->close();
 	
+	$conn->close();
 }
 ?>
+
+
+
+
 
 </body>
 </html>
