@@ -21,26 +21,26 @@
                 <th>ID</th>
                     <th>Name</th>
                     <th>Gender</th>
-                    <th>Comments</th>
+                    <th>Comment</th>
                     <th>Email</th>
                     <th>Website</th>
                     <th>Registration Date</th>
                     </tr>
                     </thead>";
-                    // output data of each row
+
         while($row = $result->fetch_assoc()) {
             echo "<tbody>
                     <tr>
-                        <td>".$row["id"]."</td>
-                        <td>".$row["name"]."</td>
-                        <td>".$row["gender"]."</td>
-                        <td>".$row["comments"]."</td>
-                        <td>".$row["email"]."</td>
-                        <td>".$row["website"]."</td>
-                        <td>".$row["reg_date"]."</td>
-                        </tr>
-                        </tbody>";
-                    }
+                    <td>".$row["id"]."</td>
+                    <td>".$row["name"]."</td>
+                    <td>".$row["gender"]."</td>
+                    <td>".$row["comment"]."</td>
+                    <td>".$row["email"]."</td>
+                    <td>".$row["website"]."</td>
+                    <td>".$row["reg_date"]."</td>
+                    </tr>
+                    </tbody>";
+                }
         echo "</table>";
         } else {
             echo "0 results";
