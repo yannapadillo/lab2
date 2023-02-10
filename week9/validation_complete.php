@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	}
 	
 	$sql = "INSERT INTO lzpadillo_myguests (Name, Email, Website, Comment, Gender)
-	VALUES ('$name', '$email', '$website','$comment', '$gender')";
+	VALUES ('$name', '$email', '$website','&comment', '$gender')";
 	
 	if ($conn->query($sql) === TRUE) {
 	echo "New record created successfully";
