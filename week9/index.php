@@ -43,6 +43,9 @@
             <a href="#contact" class="nav-link contact">Contact</a>
           </li>
           <li class="nav-item">
+            <a href="#news" class="nav-link news">News</a>
+          </li>
+          <li class="nav-item">
           <a href = "#" onclick="myFunction()"> <img src="./assets/img/sumoon.png" alt="" height="20px" width="20px" style="background-color: transparent;"> </a>
           </li>
         </ul>
@@ -76,7 +79,7 @@
       </div>
 
       <div class="home-img">
-        <img src="assets/img/profile.gif" alt="" />
+        <img src="assets/img/mainprofile.png" alt="" />
       </div>
     </section>
 
