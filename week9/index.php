@@ -387,95 +387,30 @@
   
   <footer class="footer section" id="contact">
     <h2 class="section-title">Get in Touch</h2>
-    <?php
+    <div class="contact_container bd_grid">
+          <form method="post" action="https://getform.io/f/d0e49285-52d1-481d-a594-b413d186d8b0">
 
-namespace App\Controllers;
+        <div class="form-group my-4">
+        <input type="text" class="control_input"  id="name" placeholder="Name" name="name">
+        </div>
 
-use App\Models\GuestsModel;
-use CodeIgniter\Exceptions\PageNotFoundException;
+    <div class="form-group my-4">
+      <input type="email" class="control_input" id="email"  placeholder="Email" name="email">
+    </div>
 
-class Guests extends BaseController
-{
-  public function index()
-  {
-    $model = model(GuestsModel::class);
+       <div class="form-group my-4">
+          <input class="control_input" id="subject" name="subject" placeholder="Subject" type="subject">
+       </div>
 
-    $data = [
-      'guests'  => $model->getGuests(),
-      'title' => 'Guest list',
-    ];
 
-    return view('templates/header', $data)
-      . view('guests/index')
-      . view('templates/footer');
-  }
+        <div class="form-group my-4">
+          <textarea class="control_input" id="desc" rows="5" placeholder="Message" name="desc"></textarea>
+         </div>
 
-  public function view($id = null)
-  {
-    $model = model(GuestsModel::class);
+        <button type="submit" class="control_button button" data-aos="fade-right" data-aos-delay="450">Submit</button>
 
-    $data['guests'] = $model->getGuests($id);
-
-    if (empty($data['guests'])) {
-      throw new PageNotFoundException('Cannot find the guest with the ID: ' . $id);
-    }
-
-    $data['title'] = 'Guest list';
-
-    return view('templates/header', $data)
-      . view('guests/view')
-      . view('templates/footer');
-  }
-
-  public function create()
-  {
-    helper('form');
-
-    // Checks whether the form is submitted.
-    if (!$this->request->is('post')) {
-      // The form is not submitted, so returns the form.
-      return view('templates/header', ['title' => 'Add a guest'])
-        . view('guests/create')
-        . view('templates/footer');
-    }
-
-    $post = $this->request->getPost([
-      'name',
-      'email',
-      'website',
-      'comment',
-      'gender',
-    ]);
-
-    // Checks whether the submitted data passed the validation rules.
-    if (!$this->validateData($post, [
-      'name' => 'required|max_length[70]|min_length[3]',
-      'email' => 'required|valid_email|max_length[50]|min_length[6]',
-      'website' => 'valid_url_strict|max_length[100]|min_length[4]',
-      'comment'  => 'max_length[5000]|min_length[10]',
-      'gender' => 'max_length[6]|min_length[4]',
-    ])) {
-      // The validation fails, so returns the form.
-      return view('templates/header', ['title' => 'Add a guest'])
-        . view('guests/create')
-        . view('templates/footer');
-    }
-
-    $model = model(GuestsModel::class);
-
-    $model->save([
-      'name' => $post['name'],
-      'email' => $post['email'],
-      'website' => $post['website'],
-      'comment' => $post['comment'],
-      'gender'  => $post['gender'],
-    ]);
-
-    return view('templates/header', ['title' => 'Add a guest'])
-      . view('guests/success')
-      . view('templates/footer');
-  }
-}
+        </form>
+            </div>
 <br><br>
     <div class="footer-social">
       <a href="https://www.linkedin.com/in/lyanna-padillo-8ba1b321a/" target="_blank" class="footer-icon"><i
